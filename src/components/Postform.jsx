@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Display from './Display';
+
 function FormView(){
     const initialFormData = Object.freeze({
         name:"",
         comments:""});
-        const [inputarr,setInputarr]= useState([])
+        const [input,setinput]= useState([])
         const [formData, updateFormData]= React.useState(initialFormData);
     const handleChange=(e)=> {
     updateFormData({...formData,[e.target.name]:e.target.value.trim()})
@@ -14,8 +15,8 @@ function FormView(){
         e.preventDefault()
         let name= formData.name;
         let comments= formData.comments;
-        setInputarr([...inputarr,{name,comments}])
-        console.log(inputarr);
+        setinput([...input,{name,comments}])
+        console.log(input);
         console.log(formData);
        
       }
@@ -24,17 +25,17 @@ function FormView(){
         <div className='box1'>
     <div className='boxin1'>
     <p style={{fontWeight:'bold'}}>Share Your Experience</p>
-    <lable>Name</lable><br/>
-    <input name ="name" onChange={handleChange}/><br/>
+    <lable>Name:</lable><br/>
+    <input name ="name" style={{width:300}}  onChange={handleChange} /><br/>
     <lable>Comments:</lable><br/>
-    <textarea name ="comments" onChange={handleChange}/><br/>
-    <button onClick={handleSubmit}>Post</button>
+    <textarea  name ="comments" style={{width:300,borderRadius:5}} onChange={handleChange} /><br/>
+    <button style={{width:150}} onClick={handleSubmit} onChange={initialFormData}>Post</button>
     </div>
     </div>
     <div className='box2'>
     <table>
       <tbody>
-  <Display inputarr={inputarr}/>
+  <Display input={input}/>
       
       </tbody>
     </table>

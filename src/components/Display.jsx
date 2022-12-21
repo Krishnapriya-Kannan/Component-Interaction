@@ -1,8 +1,8 @@
-function Display({inputarr}){
+function Display({input}){
     return(
         <>
         {
-            inputarr.map((info,ind)=>{
+            input.map((info,ind)=>{
               return(
                 <>
                 <tr key={ind}  style={{ color:'black',fontWeight:'bold'}}><td>{info.name}</td></tr>

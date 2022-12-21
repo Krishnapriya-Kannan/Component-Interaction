@@ -25,8 +25,8 @@
 // export default App;
 
 import './App.css';
-import FormView from './components/Form';
-import React, { useState } from 'react';
+import FormView from './components/Postform';
+import React from 'react';
 const Form= () =>{
 
 return (
